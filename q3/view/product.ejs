@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>User Info</title>
+         <link href="/css/style.css" rel="stylesheet"/> 
+         <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+         <script src="/js/product.js"></script>
+
+    </head>
+    <body>
+        <div>
+           
+            <%products.forEach((p)=> { %>
+                <div id="divImg">
+                    <%= p.id%>    <%= p.name%>  $ <%= p.price%><br>                   
+                    <img src="<%= p.imagePath%>" >
+                    <p><%= p.description%> </p>
+                    <form >
+                        <input type="hidden" name="id" id="id" value="<%= p.id%>">
+                        <input type="submit" id="addtoCart" value="Add To Cart">
+                    </form>
+               </div>             
+            <%});%>            
+        </div>
+        
+    </body>
+</html>
