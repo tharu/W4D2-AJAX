@@ -29,18 +29,16 @@ app.get("/", (req, res) => {
 
 app.post("/addToCart", (req, res) => {
     Product.addToCart(req.body.id);
-    console.log(req.body.id);
     const cart=Product.getCart();
-    req.session.cart=cart;    
-    console.log(req.session.cart);
-    res.redirect(303, '/cart');
+    req.session.cart=cart;   
+    //res.redirect(303, '/cart');
+    res.status(200).end();
 });
 
 app.get("/cart",(req, res) =>{
 
    // let products=Product.getCart();
-   console.log("coming to cart...");
-   let products= req.session.cart;  
+    let products= req.session.cart;  
     res.render("shoppingcart",
     {
         products

@@ -17,7 +17,7 @@
                     <%= p.id%>    <%= p.name%>  $ <%= p.price%><br>                   
                     <img src="<%= p.imagePath%>" >
                     <p><%= p.description%> </p>
-                    <form >
+                    <form id="addToCartForm">
                         <input type="hidden" name="id" id="id" value="<%= p.id%>">
                         <input type="submit" id="addtoCart" value="Add To Cart">
                     </form>
